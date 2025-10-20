@@ -1323,7 +1323,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                                const response = await $.ajax({
                                    type: "GET",
-                                   url: `https://agro-render.onrender.com/users/${userFromLS.email}`,
+                                   url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
                                    dataType: "json",
                                    timeout: 30000,
                                    success: async function (data) {
@@ -1950,7 +1950,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                                const response = await $.ajax({
                                    type: "GET",
-                                   url: `https://agro-render.onrender.com/users/${userFromLS.email}`,
+                                   url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
                                    dataType: "json",
                                    timeout: 30000,
                                    success: async function (data) {
@@ -2104,7 +2104,7 @@ var enc=encodeURIComponent(mc._id)
 
   // ✅ Send to backend
   $.ajax({
-    url: `https://agro-render.onrender.com/transactions/users/${user._id}/challenges/join`, 
+    url: `https://stoxphere-render.onrender.com/transactions/users/${user._id}/challenges/join`, 
     type: "POST",
     data: JSON.stringify({ challenge: joinedChallenge }),
     contentType: "application/json",
@@ -2135,7 +2135,7 @@ var enc=encodeURIComponent(mc._id)
     // Call backend API
     const response = await $.ajax({
       type: "POST",
-      url: `https://agro-render.onrender.com/transactions/users/${user._id}/challenges/${id}/claim`,
+      url: `https://stoxphere-render.onrender.com/transactions/users/${user._id}/challenges/${id}/claim`,
       contentType: "application/json",
     });
 
@@ -2201,7 +2201,7 @@ var enc=encodeURIComponent(mc._id)
 
     try {
       // send to backend
-      const res = await fetch(`https://agro-render.onrender.com/transactions/${user._id}/deposit/challenge`, {
+      const res = await fetch(`https://stoxphere-render.onrender.com/transactions/${user._id}/deposit/challenge`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -2250,7 +2250,7 @@ var enc=encodeURIComponent(mc._id)
     }
 
     try {
-      const response = await fetch(`https://agro-render.onrender.com/transactions/${user._id}/withdrawal/challenge`, {
+      const response = await fetch(`https://stoxphere-render.onrender.com/transactions/${user._id}/withdrawal/challenge`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

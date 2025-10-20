@@ -9558,7 +9558,7 @@
     async function fetchUser() {
       const response = await $.ajax({
         type: "GET",
-        url: ' https://agro-render.onrender.com/users',   
+        url: ' https://stoxphere-render.onrender.com/users',   
         dataType: "json",
         timeout: 30000,
       });
@@ -9644,7 +9644,7 @@ console.log(transactionId)
 
 const response = await $.ajax({
 type: "PUT",
-url: ` https://agro-render.onrender.com/transactions/${_id}/withdrawals/${transactionId}/confirm`,
+url: ` https://stoxphere-render.onrender.com/transactions/${_id}/withdrawals/${transactionId}/confirm`,
 dataType: "json",
 data:{_id,transactionId},
 timeout: 30000,
@@ -9675,7 +9675,7 @@ async function declineUserDetail(details){
     
 const response = await $.ajax({
 type: "PUT",
-url: ` https://agro-render.onrender.com/transactions/${_id}/withdrawals/${transactionId}/decline`,
+url: ` https://stoxphere-render.onrender.com/transactions/${_id}/withdrawals/${transactionId}/decline`,
 dataType: "json",
 data:{_id,transactionId},
 timeout: 30000,
