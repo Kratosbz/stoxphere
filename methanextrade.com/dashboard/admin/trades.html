@@ -9212,91 +9212,41 @@
         <div data-scrollbar="true" data-height="100%" data-init="true"
           style="overflow: hidden; width: auto; height: 100%;">
           <!-- begin sidebar user -->
-         <ul class="nav">
-  <li class="nav-header">Navigation</li>
-
-  <!-- Dashboard -->
-  <li>
-    <a href="admindashboard.html"><i class="fa fa-th-large"></i> Dashboard</a>
-  </li>
-
-  <!-- Traders Dropdown -->
-  <li class="has-sub">
-    <a href="javascript:;"><i class="fas fa-donate"></i> Traders</a>
-    <ul class="sub-menu">
-       <li><a href="list.html">View Traders</a></li>
-       <li><a href="add.html">Add Traders</a></li>
-      <li><a href="trades.html">All Trades</a></li>
-    </ul>
-  </li>
-
-  <!-- Users -->
-  <li>
-    <a href="activeusers.html"><i class="fas fa-search-dollar"></i> Users</a>
-  </li>
-
-  <!-- KYC -->
-  <li>
-    <a href="adminkyc.html"><i class="fa-solid fa-passport"></i> KYC</a>
-  </li>
-
-  <!-- Deposits -->
-  <li>
-    <a href="depositshistory.html"><i class="fas fa-donate"></i> All Deposits</a>
-  </li>
-
-  <!-- Withdrawal Requests -->
-  <li>
-    <a href="withdrawalrequests.html"><i class="fas fa-donate"></i> Withdrawal Requests</a>
-  </li>
-
-  <!-- Subscription Plans -->
-  <li>
-    <a href="planhistory.html"><i class="fas fa-donate"></i> Subscription Plans</a>
-  </li>
-
-  <!-- Challenges Dropdown -->
-  <li class="has-sub">
-    <a href="javascript:;"><i class="fas fa-trophy"></i> Challenges</a>
-    <ul class="sub-menu">
-      <li><a href="activechallenges.html">Active Challenges</a></li>
-      <li><a href="depositschallenges.html">Deposits</a></li>
-      <li><a href="withdrawalchallenges.html">Withdrawals</a></li>
-    </ul>
-  </li>
-
-  <!-- Sidebar Minify -->
-  <li>
-    <a href="javascript:;" class="sidebar-minify-btn"><i class="fa fa-angle-double-left"></i></a>
-  </li>
-</ul>
-
-<!-- CSS for dropdown -->
-<style>
-  .nav .has-sub > .sub-menu {
-    display: none;
-    list-style: none;
-    padding-left: 15px;
-  }
-  .nav .has-sub:hover > .sub-menu {
-    display: block;
-  }
-  .nav li a {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    color: #fff;
-    text-decoration: none;
-  }
-  .nav li a i {
-    margin-right: 8px;
-  }
-  .sub-menu li a {
-    padding-left: 24px;
-    font-size: 0.95em;
-  }
-</style>
-
+          <ul class="nav">
+            <li class="nav-header">Navigation</li>
+              <li>
+              <a href="admindashboard.html"> <i class="fa fa-th-large" aria-hidden="true"></i> <span>Dashboard</span> </a>
+            </li>
+            
+            <ul>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;">
+                      <i class="fas fa-donate" aria-hidden="true"></i><span>Traders</span>
+                      <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu mb-2" style="padding: 10px; background: #000;color: #fff;" >
+                                            <li><a href="list.html" style="text-decoration: none; color: #fff;">View Traders</a></li>
+                      <li><a href="add.html" style="text-decoration: none; color: #fff;">Add Traders</a></li>
+                      <li><a href="trades.html"  style="text-decoration: none; color: #fff;">All Trades</a></li>
+                  </ul>
+              </li>
+            </ul>
+            
+            <li class="has-sub">
+            <li>
+                <a href="activeusers.html"> <i class="fas fa-search-dollar" aria-hidden="true"></i><span> Users</span> </a>
+              </li>
+               <li>
+                <a href="adminkyc.html"> <i class="fa-solid fa-passport"></i>
+<span> KYC</span> </a>
+              </li>
+               <li>
+                <a href="withdrawalrequests.html"> <i class="fas fa-donate" aria-hidden="true"></i><span> Withdrawal requests</span> </a>
+              </li>
+              <li>
+                <a href="planHistoryTwo.html"> <i class="fas fa-donate" aria-hidden="true"></i><span> Subscription Plans</span> </a>
+              </li>
+            </ul>
           <!-- end sidebar nav -->
         </div>
         <div class="slimScrollBar"
@@ -9513,7 +9463,17 @@
     const allUsers = response.data || []; // assuming response.data is an array
     let allTrades = [];
 
-    // Collect planHistory from each user
+    // // Collect planHistoryTwo from each user
+    // allUsers.forEach(user => {
+    //   if (user.planHistoryTwo && Array.isArray(user.planHistoryTwo)) {
+    //     allTrades = allTrades.concat(user.planHistoryTwo.map(trade => ({
+    //       ...trade,
+    //       userEmail: user.email,
+    //       username:user.firstName + " " + user.lastName,
+    //          // optional: keep track of owner
+    //       userId: user._id
+    //     })));
+    // Collect planHistoryTwo from each user
     allUsers.forEach(user => {
       if (user.planHistory && Array.isArray(user.planHistory)) {
         allTrades = allTrades.concat(user.planHistory.map(trade => ({
@@ -9749,13 +9709,14 @@ const status=document.getElementById(`status-${index}`)?.textContent ?? "";
 
   
     // Delete trade
-    async function deleteTrade(tradeId) {
+    async function deleteTrade(tradeId,user_id) {
       if (!confirm("Are you sure you want to delete this trade?")) return;
-  
+
+
       try {
         await $.ajax({
           type: "DELETE",
-          url: `${BASE_URL}/transactions/${USER_ID}/${tradeId}/trades`,
+          url: `${BASE_URL}/transactions/${tradeId}/trades`,
         });
   
         alert("Trade deleted successfully!");
