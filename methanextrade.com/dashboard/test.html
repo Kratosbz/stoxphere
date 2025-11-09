@@ -3163,7 +3163,7 @@
         
                     const response = await $.ajax({
                         type: "GET",
-                        url: `http://localhost:8080/users/${userFromLS.email}`,
+                        url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
                         dataType: "json",
                         timeout: 30000,
                         success: async function (data) {
@@ -3224,6 +3224,12 @@
                              <li><a href="brokers.html" aria-expanded="false"><i class="fas fas fa-bar-chart-o"></i><span class="nav-title">Copy Trading</span></a> </li>
                              <!-- <li><a href="livetrade.html" aria-expanded="false"><i class="fas fas fa-eye"></i><span class="nav-title">Live trade</span></a> </li> -->
                              <li><a href="placetrade.html" aria-expanded="false"><i class="fas fa-rotate-right"></i><span class="nav-title">Place Trade</span></a> </li>
+            <li>
+  <a href="challenge.html" aria-expanded="false">
+    <i class="fas fa-trophy"></i>
+    <span class="nav-title">Challenges</span>
+  </a>
+</li>
 
                             <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-suitcase"></i><span class="nav-title">Transactions</span></a>
                                 <ul aria-expanded="false" class="collapse">

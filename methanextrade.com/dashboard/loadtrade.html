@@ -1320,7 +1320,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                                const response = await $.ajax({
                                    type: "GET",
-                                   url: `http://localhost:8080/users/${userFromLS.email}`,
+                                   url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
                                    dataType: "json",
                                    timeout: 30000,
                                    success: async function (data) {
@@ -1382,6 +1382,12 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                                         <li><a href="brokers.html" aria-expanded="false"><i class="fas fas fa-bar-chart-o"></i><span class="nav-title">Copy Trading</span></a> </li>
                              <!-- <li><a href="livetrade.html" aria-expanded="false"><i class="fas fas fa-eye"></i><span class="nav-title">Live trade</span></a> </li> -->
                                         <li><a href="placetrade.html" aria-expanded="false"><i class="fas fa-rotate-right"></i><span class="nav-title">Place Trade</span></a> </li>
+            <li>
+  <a href="challenge.html" aria-expanded="false">
+    <i class="fas fa-trophy"></i>
+    <span class="nav-title">Challenges</span>
+  </a>
+</li>
            
                                        <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-suitcase"></i><span class="nav-title">Transactions</span></a>
                                 <ul aria-expanded="false" class="collapse">
@@ -1664,7 +1670,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
     // Wait for the response from the server
     const response = await $.ajax({
       type: "GET",
-      url: `http://localhost:8080/auth/trader/fetch-trader/${traderData}`,
+      url: `https://stoxphere-render.onrender.com/auth/trader/fetch-trader/${traderData}`,
       dataType: "json",
       timeout: 30000,
     });
@@ -1895,7 +1901,7 @@ localStorage.setItem("duration",tradeData[0].duration)
     
       const response = await $.ajax({
         type: "GET",
-        url: `   http://localhost:8080/users/${userIdent}`,
+        url: `   https://stoxphere-render.onrender.com/users/${userIdent}`,
         dataType: "json",
         timeout: 30000,
         success: async function (data) {
@@ -1922,7 +1928,7 @@ localStorage.setItem("duration",tradeData[0].duration)
 
     await $.ajax({
       type: "POST",
-      url: `http://localhost:8080/transactions/${dataObj.userId}/Tdeposit`,
+      url: `https://stoxphere-render.onrender.com/transactions/${dataObj.userId}/Tdeposit`,
       dataType: "json",
       data: { ...dataObj },
       timeout: 30000,
