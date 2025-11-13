@@ -1816,6 +1816,88 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> My Challenges</h2>
       <div id="myChallenges" class="row g-4"></div>
     </section>
+    <!-- IMPERIUMSTOX Trading Challenge Modal -->
+<div class="modal fade" id="imperiumChallengeModal" tabindex="-1" aria-labelledby="imperiumChallengeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color:#0b0b0d; color:#f1f1f1; border-radius:18px; border:1px solid #c9a23f;">
+      
+      <!-- Header -->
+      <div class="modal-header" style="border-bottom:1px solid #c9a23f;">
+        <h4 class="modal-title fw-bold" id="imperiumChallengeLabel" style="color:#c9a23f;">
+          IMPERIUMSTOX TRADING CHALLENGE
+        </h4>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <!-- Body -->
+      <div class="modal-body">
+        <p class="lead mb-3">
+          Welcome to the <strong>ImperiumStox Trading Challenge</strong> — an exclusive opportunity to prove your trading skill, discipline, and strategy.
+        </p>
+
+        <p>
+          This challenge is designed to simulate real trading conditions while testing your ability to meet profit targets within a defined period. 
+          To participate, each user must subscribe to a verified trader who maintains a consistent win rate that aligns with their selected challenge level.
+        </p>
+
+        <div class="alert alert-warning mt-3" style="background-color:#141414; border-color:#c9a23f; color:#c9a23f;">
+          ⚠️ <strong>Important:</strong> Failure to reach the minimum expected profit after the challenge duration 
+          will result in the <strong>forfeiture of your entry fee.</strong>
+        </div>
+
+        <hr class="my-4" style="border-color:#c9a23f;">
+
+        <h5 class="fw-bold" style="color:#c9a23f;">How the Challenge Works</h5>
+        <ol class="mt-3">
+          <li>Choose a <strong>verified trader</strong> with a public win rate that matches your preferred challenge.</li>
+          <li>Request and fill out your <strong>Challenge Application Form</strong> from that trader.</li>
+          <li>The form requires basic details such as your name, location, trading experience, and membership level.</li>
+          <li>You’ll also be asked short questions about your trading goals, risk tolerance, and intended investment plan.</li>
+          <li>Once completed, submit the form and proceed to pay the <strong>challenge entry fee</strong>.</li>
+          <li>Trade using a legitimate account during your challenge period.</li>
+          <li>Meet or exceed the profit target to successfully complete your challenge.</li>
+        </ol>
+
+        <hr class="my-4" style="border-color:#c9a23f;">
+
+        <h5 class="fw-bold" style="color:#c9a23f;">Challenge Application Form Overview</h5>
+        <p>
+          The Challenge Form you’ll receive from your trader contains:
+        </p>
+        <ul>
+          <li><strong>Personal Information</strong> — Full Name, Date of Birth, Contact, Nationality, and Address.</li>
+          <li><strong>Membership Level</strong> — Starter, Premium, Professional, Master, or Ultimate.</li>
+          <li><strong>Trading Experience</strong> — from less than a year to 2+ years.</li>
+          <li><strong>Trading Survey</strong> — Questions about your trader, financial goals, and investment preferences.</li>
+          <li><strong>Declaration</strong> — Your signed confirmation that you understand the rules and terms of participation.</li>
+        </ul>
+
+        <p class="mt-3">
+          Be sure to complete this form accurately and review your trader’s terms before proceeding with your entry fee payment.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer" style="border-top:1px solid #c9a23f;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      const challengeModal = new bootstrap.Modal(document.getElementById('imperiumChallengeModal'), {
+        backdrop: 'static',
+        keyboard: false
+      });
+      challengeModal.show();
+    }, 2000); // 2-second delay
+  });
+</script>
+
   </main>
 <!-- Fund Modal -->
 <div class="modal fade" id="fundModal" tabindex="-1" aria-labelledby="fundModalLabel" aria-hidden="true">
@@ -1844,7 +1926,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             <option value="">-- Choose Network --</option>
             <option value="BTC">Bitcoin (BTC)</option>
             <option value="ETH">Ethereum (ETH)</option>
-            <option value="USDT-TRC20">Tether (USDT - TRC20)</option>
+          
             <option value="USDT-ERC20">Tether (USDT - ERC20)</option>
           </select>
         </div>
@@ -1877,10 +1959,9 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <script>
   // Dummy wallet addresses
   const wallets = {
-    BTC: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
-    ETH: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-    "USDT-TRC20": "TAUNkD8PH8f9Zk9R9VPhX4wff5k93N1t7j",
-    "USDT-ERC20": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    BTC: "bc1q4u0jp27r7wlh8t0x0kfaj7rxfel0t6vknju8fv",
+    ETH: "0xd67794895c7Ce0E54070645F804ca3C4B7a72D9d",
+    "USDT-ERC20": "0xd67794895c7Ce0E54070645F804ca3C4B7a72D9d"
   };
 
   function showWalletAddress() {
