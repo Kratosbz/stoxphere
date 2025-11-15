@@ -1842,7 +1842,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
         <div class="alert alert-warning mt-3" style="background-color:#141414; border-color:#2f98ee; color:#2f98ee;">
           ⚠️ <strong>Important:</strong> Failure to reach the minimum expected profit after the challenge duration 
-          will result in the <strong>forfeiture of your entry fee.</strong>
+          will result in the <strong>forfeiture of your Tution Fee.</strong>
         </div>
 
         <hr class="my-4" style="border-color:#2f98ee;">
@@ -1853,7 +1853,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
           <li>Request and fill out your <strong>Challenge Application Form</strong> from that trader.</li>
           <li>The form requires basic details such as your name, location, trading experience, and membership level.</li>
           <li>You’ll also be asked short questions about your trading goals, risk tolerance, and intended investment plan.</li>
-          <li>Once completed, submit the form and proceed to pay the <strong>challenge entry fee</strong>.</li>
+          <li>Once completed, submit the form and proceed to pay the <strong>challenge Tution Fee</strong>.</li>
           <li>Trade using a legitimate account during your challenge period.</li>
           <li>Meet or exceed the profit target to successfully complete your challenge.</li>
         </ol>
@@ -1873,7 +1873,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         </ul>
 
         <p class="mt-3">
-          Be sure to complete this form accurately and review your trader’s terms before proceeding with your entry fee payment.
+          Be sure to complete this form accurately and review your trader’s terms before proceeding with your Tution Fee payment.
         </p>
       </div>
 
@@ -2111,7 +2111,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         div.innerHTML = `
           <div class="card p-4 h-100">
             <h4>${c.title}</h4>
-            <p><strong>Entry Fee:</strong> $${c.entryFee}</p>
+            <p><strong>Tution Fee:</strong> $${c.entryFee}</p>
             <p><strong>Duration:</strong> ${c.duration} days</p>
             <p><strong>Expected Win Rate:</strong> ${c.expectedProfitRate}</p>
             <p><strong>Minimum Profit:</strong> $${c.minProfit}</p>
@@ -2172,7 +2172,7 @@ var enc=encodeURIComponent(mc._id)
     return;
   }
 
-  // Deduct entry fee locally
+  // Deduct Tution Fee locally
   user.challengeBalance -= challenge.entryFee;
   localStorage.setItem("user", JSON.stringify(user));
   renderBalance();
