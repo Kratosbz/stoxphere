@@ -2072,25 +2072,25 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     let user = JSON.parse(localStorage.getItem("user"));
 
     const challenges = [
-      {
+     {
         id: 1,
         title: "Challenge 1",
-        entryFee: 1000,
-        duration: 30,
-        expectedProfitRate: "80%",
+        entryFee: 25000,
+        duration: 60,
+        expectedProfitRate: "40%",
         minProfit: 10000,
         reward: "x2 (double your profit)",
-        rewardValue: 20000
+        rewardValue: 50000
       },
       {
         id: 2,
         title: "Challenge 2",
-        entryFee: 2000,
-        duration: 45,
-        expectedProfitRate: "60%",
+        entryFee: 30000,
+        duration: 30,
+        expectedProfitRate: "80%",
         minProfit: 1500,
-        reward: "$12,000 fixed reward",
-        rewardValue: 12000
+        reward: "x2 (double your profit)",
+        rewardValue: entryFee*2
       }
     ];
 
