@@ -2080,7 +2080,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         expectedProfitRate: "40%",
         minProfit: 10000,
         reward: "x2 (double your profit)",
-        // rewardValue: 50000
+        mcb:"$5000-$25000"
       },
       {
         id: 2,
@@ -2090,7 +2090,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         expectedProfitRate: "80%",
         minProfit: 1500,
         reward: "x2 (double your profit)",
-        // rewardValue: entryFee*2
+       mcb:"$30000 - Unlimited"
       }
     ];
 
@@ -2116,6 +2116,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             <p><strong>Expected Win Rate:</strong> ${c.expectedProfitRate}</p>
             <p><strong>Minimum Profit:</strong> $${c.minProfit}</p>
             <p><strong>Reward:</strong> ${c.reward}</p>
+             <p><strong>Minimum Challenge Balance:</strong> ${c.mcb}</p>
             <button class="btn btn-custom mt-2" onclick="joinChallenge(${c.id})">
               <i class="fa-solid fa-door-open"></i> Join Challenge
             </button>
