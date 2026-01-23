@@ -743,79 +743,116 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 </style>		
 
-<form class="" method="post"  id="signupForm">
-	<input type="hidden" name="post_id" value="373"/>
-	<input type="hidden" name="form_id" value="aee353a"/>
-	<input type="hidden" name="referer_title" value="Contact Us" />
-	<input type="hidden" name="queried_id" value="373"/>
-	
-	<div class="elementor-form-fields-wrapper elementor-labels-above">
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-sm-100">
-			<label for="form-field-name" class="elementor-field-label"> Firstname </label>
-				<input size="1" type="text" name="form_fields[name]" id="firstName" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Fullname">
-		</div>
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_b25c7a6 elementor-col-100 elementor-sm-100">
-			<label for="form-field-field_b25c7a6" class="elementor-field-label"> Lastname </label>
-				<input size="1" type="text" name="form_fields[field_b25c7a6]" id="lastName" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Username">
-		</div>
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_0e0b10e elementor-col-100 elementor-sm-100">
-			<label for="form-field-field_0e0b10e" class="elementor-field-label"> Phone Number </label>
-				<input size="1" type="text" name="form_fields[field_0e0b10e]" id="phone" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Phone Number">
-		</div>
-		<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-sm-100 elementor-field-required">
-			<label for="form-field-email" class="elementor-field-label"> Email </label>
-				<input size="1" type="email" name="form_fields[email]" id="email" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Email" required="required" aria-required="true">
-		</div>
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_f17b049 elementor-col-100 elementor-field-required">
-			<label for="form-field-field_f17b049" class="elementor-field-label"> Password </label>
-				<input size="1" type="text" name="form_fields[field_f17b049]" id="password" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Password" required="required" aria-required="true">
-		</div>
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_f17b049 elementor-col-100 elementor-field-required">
-			<label for="form-field-field_f17b049" class="elementor-field-label"> Confirm Password </label>
-				<input size="1" type="text" name="form_fields[field_f17b049]" id="confirmPassword" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your Password" required="required" aria-required="true">
-		</div>
-		
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_f17b049 elementor-col-100 elementor-field-required">
-			<label for="form-field-field_f17b049" class="elementor-field-label"> Country </label>
-				<input size="1" type="text" name="form_fields[field_f17b049]" id="country" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter your country with address (eg. 123 Fk stress, New York, USA)" required="required" aria-required="true">
-		</div>
+<form method="post" id="signupForm" class="p-3">
 
+    <input type="hidden" name="post_id" value="373">
+    <input type="hidden" name="form_id" value="aee353a">
+    <input type="hidden" name="referer_title" value="Contact Us">
+    <input type="hidden" name="queried_id" value="373">
 
+    <div class="row g-3">
 
+        <!-- First Name -->
+        <div class="col-12">
+            <label for="firstName" class="form-label">Firstname</label>
+            <input type="text"
+                   id="firstName"
+                   name="form_fields[name]"
+                   class="form-control"
+                   placeholder="Enter your Fullname"
+                   required>
+        </div>
 
-		<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-			<button type="submit" class="elementor-button elementor-size-sm">
-				<span >
-					<span class=" elementor-button-icon"> </span>
-					<span class="elementor-button-text" id="registerBtn">Sign Up</span>
-				</span>
-			</button>
-		</div>
+        <!-- Last Name -->
+        <div class="col-12">
+            <label for="lastName" class="form-label">Lastname</label>
+            <input type="text"
+                   id="lastName"
+                   name="form_fields[field_b25c7a6]"
+                   class="form-control"
+                   placeholder="Enter your Username"
+                   required>
+        </div>
 
+        <!-- Phone -->
+        <div class="col-12">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel"
+                   id="phone"
+                   name="form_fields[field_0e0b10e]"
+                   class="form-control"
+                   placeholder="Enter your Phone Number"
+                   required>
+        </div>
 
-		<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_f17b049 elementor-col-100 elementor-field-required">
-		
-		<label for="form-field-field_f17b049" class="elementor-field-label" style="color: grey;">Already have an account? </label>
-		</div>
+        <!-- Email -->
+        <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email"
+                   id="email"
+                   name="form_fields[email]"
+                   class="form-control"
+                   placeholder="Enter your Email"
+                   required>
+        </div>
 
-		<div data-elementor-type="wp-post" data-elementor-id="2685" class="elementor elementor-2685 elementor-column elementor-col-100" data-elementor-post-type="envato_tk_templates">
+        <!-- Password -->
+        <div class="col-12">
+            <label for="password" class="form-label">Password</label>
+            <input type="password"
+                   id="password"
+                   name="form_fields[field_f17b049]"
+                   class="form-control"
+                   placeholder="Enter your Password"
+                   required>
+        </div>
 
+        <!-- Confirm Password -->
+        <div class="col-12">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password"
+                   id="confirmPassword"
+                   class="form-control"
+                   placeholder="Confirm your Password"
+                   required>
+        </div>
 
-		<div class="elementor-element elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons  elementor-element-cc01679" data-id="cc01679" style="width: 100%; max-width: 100%;">
+        <!-- Country -->
+        <div class="col-12">
+            <label for="country" class="form-label">Country</label>
+            <input type="text"
+                   id="country"
+                   name="form_fields[field_f17b049]"
+                   class="form-control"
+                   placeholder="123 FK Street, New York, USA"
+                   required>
+        </div>
 
-			<a class="elementor-button elementor-size-sm" href="login.html" style="padding-block-start: 10px; padding-block-end: 10px">
-				<span >
-					<span class=" elementor-button-icon"> </span>
-					<span class="elementor-button-text">Login</span> 
-				</span>
-			</a>
+        <!-- Submit -->
+        <div class="col-12">
+            <button type="submit"
+                    id="registerBtn"
+                    class="btn btn-primary w-100">
+                Sign Up
+            </button>
+        </div>
 
-		</div>
+        <!-- Login Text -->
+        <div class="col-12 text-center mt-3">
+            <span class="text-muted">Already have an account?</span>
+        </div>
 
-		</div>
+        <!-- Login Button -->
+        <div class="col-12">
+            <a href="login.html"
+               class="btn btn-outline-secondary w-100">
+                Login
+            </a>
+        </div>
 
-	</div>
+    </div>
 </form>
+
 </div>
 </div>
 </div>
