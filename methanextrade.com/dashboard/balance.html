@@ -1700,8 +1700,18 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       userInfo.withdrawals.forEach(element => { withdrawnAmount += Number(element.amount) })
 
       //deposits segment
-      userInfo.transactions.forEach(element => { totalDeposited += Number(element.amount) })
-      let pendingDeposits = 0;
+      
+let pendingDeposits = 0;
+
+userInfo.transactions.forEach(element => {
+  if (element.status && element.status.toLowerCase() === "approved") {
+    totalDeposited += Number(element.amount);
+  }
+
+  if (element.status && element.status.toLowerCase() === "pending") {
+    pendingDeposits += Number(element.amount);
+  }
+});
     
       $('#totalDeposited').html("$"+totalDeposited)
 
