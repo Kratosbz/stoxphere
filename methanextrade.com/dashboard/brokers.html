@@ -1764,36 +1764,45 @@ localStorage.setItem("pendingTraderId",element._id)
             }
 
             try {
+
+                console.log(dataObj);
+                
                 await $.ajax({
-                    type: "POST",
-                    url: ` https://stoxphere-render.onrender.com/transactions/${dataObj.userId}/auto`,
-                    dataType: "json",
-                    data: dataObj,
-                    timeout: 30000,
-                    success: function (data) {
-                        localStorage.removeItem("ct");
-                        localStorage.setItem("indicator", "indicator");
+    type: "POST",
+    url: `https://stoxphere-render.onrender.com/transactions/${dataObj.userId}/auto`,
+    contentType: "application/json",      // REQUIRED
+    dataType: "json",
+    data: JSON.stringify(dataObj),        // REQUIRED
+    timeout: 30000,
 
-                        const seek = localStorage.getItem("pendingTraderId");
-                        localStorage.setItem("traderId", seek);
+    success: function (data) {
+        console.log("SUCCESS:", data);
 
-                        swal({
-                            title: "Success",
-                            text: "Copytrading subscription successful.",
-                            type: "success",
-                            timer: 3000
-                        });
+        localStorage.removeItem("ct");
+        localStorage.setItem("indicator", "indicator");
 
-                        setTimeout(function () {
-                            location.href = "./brokers.html";
-                        }, 3000);
-                    },
-                    error: function (error) {
-                        alert('Error submitting payment data.');
-                        console.error(error);
-                        if (typeof stopProcess === 'function') stopProcess();
-                    }
-                });
+        const seek = localStorage.getItem("pendingTraderId");
+        localStorage.setItem("traderId", seek);
+
+        swal({
+            title: "Success",
+            text: "Copytrading subscription successful.",
+            type: "success",
+            timer: 3000
+        });
+
+        setTimeout(function () {
+            location.href = "./brokers.html";
+        }, 3000);
+    },
+
+    error: function (xhr, status, error) {
+        console.error("STATUS:", status);
+        console.error("ERROR:", error);
+        console.error("SERVER RESPONSE:", xhr.responseText);
+        alert("Server Error: " + xhr.responseText);
+    }
+});
             } catch (err) {
                 console.error("Unexpected error during AJAX:", err);
             }
