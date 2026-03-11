@@ -1674,6 +1674,9 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
   // ✅ Send withdrawal request
   async function sendWithdrawalTx(dataObj) {
+
+    console.log(dataObj);
+    
     try {
       const response = await $.ajax({
         type: "POST",
@@ -1786,11 +1789,11 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       amount,
       method,
       address,
-      _id: user._id,
-      from: user.from,
+      _id: userInfo._id,
+      from: userInfo.from,
       account,
       timestamp,
-      balance: user.balance,
+      balance: userInfo.balance,
     });
   });
 </script>
