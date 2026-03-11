@@ -1754,7 +1754,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     const currentDate = new Date();
     const timestamp = currentDate.toISOString().slice(0, 19).replace("T", " ");
 
-    const user = await fetchUserFromLocalStorage();
+    const user =  fetchUserFromLocalStorage();
     if (!user) {
       swal("Error", "User not found in local storage", "error");
       unBlurr();
