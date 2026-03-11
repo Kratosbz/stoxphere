@@ -1761,7 +1761,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       return;
     }
 
-    if (Number(user.balance) < amount) {
+    if (Number(user.balance ) || Number(user.profit ) < amount) {
       swal("Insufficient funds", "You don’t have enough funds for this transaction.", "error");
       unBlurr();
       return;
