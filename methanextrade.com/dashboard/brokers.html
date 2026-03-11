@@ -1742,16 +1742,18 @@ localStorage.setItem("pendingTraderId",element._id)
                 timestamp: new Date(),
                 info: "4-5 trades a week" // consider making this dynamic
             };
+const balance = Number(user.balance || 0);
+const profit = Number(user.profit || 0);
 
-            if (amount > Number(user.balance)) {
-                swal({
-                    title: "Insufficient Balance",
-                    text: "You do not have enough balance for this plan. Please top up and try again.",
-                    type: "error",
-                    timer: 3000
-                });
-                return;
-            }
+if (amount > balance + profit) {
+    swal({
+        title: "Insufficient Balance",
+        text: "You do not have enough balance for this plan. Please top up and try again.",
+        type: "error",
+        timer: 3000
+    });
+    return;
+}
 
             if (amount < copyMinimumDep) {
                 swal({
