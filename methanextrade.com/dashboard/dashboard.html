@@ -518,8 +518,12 @@ let lostTrades=0
                    
   $("#closedTrades").html(closedTrades);
 
-              $("#winLoss").html(wonTrades+"/"+lostTrades);              
+              $("#winLoss").html(wonTrades+"/"+lostTrades);        
+              
+              
+               $("#totalBalance").html(Number(userInfo.profit)+Number(userInfo.profit));  
                     })
+
             
             
                 </script>
@@ -672,6 +676,10 @@ let lostTrades=0
   <div class="card ratio">
     <h3>Win/Loss Ratio</h3>
     <div class="value" id="winLoss"></div>
+  </div>
+   <div class="card ratio">
+    <h3>Total balance</h3>
+    <div class="value" id="totalBalance"></div>
   </div>
 </div>
 
