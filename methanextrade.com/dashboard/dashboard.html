@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -521,7 +520,7 @@ let lostTrades=0
               $("#winLoss").html(wonTrades+"/"+lostTrades);        
               
               
-               $("#totalBalance").html("$"+Number(userInfo.profit)+Number(userInfo.balance));  
+               $("#totalBalance").html("$"+eval(Number(userInfo.profit)+Number(userInfo.balance)));  
                     })
 
             
